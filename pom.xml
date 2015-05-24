@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.barakb</groupId>
-    <artifactId>testable-raft</artifactId>
+    <artifactId>raft-easy</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>A Testable Raft implementation</name>
@@ -18,12 +18,12 @@
         <log4j.version>2.2</log4j.version>
         <junit.version>4.12</junit.version>
         <hamcrest.version>1.3</hamcrest.version>
+        <easymock.version>3.3.1</easymock.version>
     </properties>
 
     <modules>
-        <module>networking</module>
-        <module>protocol</module>
-        <module>util</module>
+        <module>raft-protocol</module>
+        <module>raft-util</module>
     </modules>
 
 
@@ -63,6 +63,10 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
         </dependency>
     </dependencies>
 
@@ -118,6 +122,12 @@
                 <groupId>org.hamcrest</groupId>
                 <artifactId>hamcrest-all</artifactId>
                 <version>${hamcrest.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.easymock</groupId>
+                <artifactId>easymock</artifactId>
+                <version>${easymock.version}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
